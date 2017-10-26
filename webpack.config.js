@@ -1,8 +1,17 @@
+var webpack = require('webpack');
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
+  template: './index.html',
+  filename: 'index.html',
+  inject: 'body'
+});
 var config = {
-   entry: './app/main.jsx', // entry point
+  context: path.resolve(__dirname, './app'),
+   entry: './index.js', // entry point
    output: {
-         filename: 'index.js', // place where bundled app will be served
+       path: path.resolve(__dirname, 'build'),
+       filename: 'app.bundle.js'
       },
    devServer: {
          inline: true, // autorefresh
@@ -31,6 +40,7 @@ var config = {
             }
          }
       ]
-   }
+   },
+   plugins: [HtmlWebpackPluginConfig]
 }
 module.exports = config;

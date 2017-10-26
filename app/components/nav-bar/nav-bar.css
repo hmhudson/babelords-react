@@ -1,0 +1,31 @@
+#babeLogo {
+    height: 300px;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+#pictureExtend {
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+
+.button {
+    background-color: #f44283;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-right:55px;
+    font-size: 14px;
+}
+
+#pictureExtend {
+    background-color: #325bff;
+}
+
+.container {
+    text-align: center;
+}

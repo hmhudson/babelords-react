@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './index.html',
   filename: 'index.html',
@@ -38,6 +39,17 @@ var config = {
    query: {
                presets: ['es2015', 'react'] // use es2015 and react
             }
+        },
+        {
+           test: /\.css$/,
+           include: [
+            path.join(__dirname, 'app'),
+            path.join(__dirname, '../node_modules')
+           ],
+           loader: ExtractTextPlugin.extract({
+               fallback: 'style-loader',
+            use: 'css-loader'
+           })
          }
       ]
    },

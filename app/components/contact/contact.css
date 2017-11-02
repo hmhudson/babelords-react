@@ -1,0 +1,13 @@
+h1 {
+    font-family: helvetica;
+}
+
+body {
+    text-align: center;
+    font-family: helvetica;
+    margin-bottom: 40px;
+}
+
+#instaLogo {
+    height: 100px;
+}

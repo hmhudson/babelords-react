@@ -41,18 +41,18 @@ var config = {
             }
         },
         {
-           test: /\.css$/,
+           test: /\.(scss|css)$/,
            include: [
             path.join(__dirname, 'app'),
             path.join(__dirname, '../node_modules')
            ],
            loader: ExtractTextPlugin.extract({
                fallback: 'style-loader',
-            use: 'css-loader'
+            use: ['css-loader', 'sass-loader']
            })
          }
       ]
    },
-   plugins: [HtmlWebpackPluginConfig]
+   plugins: [HtmlWebpackPluginConfig, new ExtractTextPlugin({ filename: '[name].css', disable: false, allChunks: true })]
 }
 module.exports = config;

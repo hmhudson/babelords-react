@@ -1,0 +1,45 @@
+.about {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#Ian {
+    margin-left: 40px;
+    text-align: center;
+}
+
+#Mandy {
+    margin-left: 40px;
+    text-align: center;
+}
+
+#Haley {
+    margin-left: 40px;
+    text-align: center;
+}
+
+#ianPic{
+    height: 400px;
+}
+
+#mandyPic {
+    height: 400px;
+}
+
+#haleyPic{
+    height: 400px;
+    margin-bottom: 40px;
+}
+
+.row {
+    margin-left: 40px;
+
+}
+
+body {
+    font-family: helvetica;
+}
+
+h3 {
+    font-size: 12;
+}

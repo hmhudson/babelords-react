@@ -20,6 +20,22 @@ export default class NavBar extends React.Component {
     pageToHome() {
         page(pagePaths.home);
     }
+
+    pageToGallery() {
+        page(pagePaths.gallery);
+    }
+    pageToMusic() {
+        page(pagePaths.music);
+    }
+    pageToVideos() {
+        page(pagePaths.videos);
+    }
+    pageToContact() {
+        page(pagePaths.contact);
+    }
+    pageToLogin() {
+        page(pagePaths.login);
+    }
     render() {
         return (
             <div>
@@ -30,11 +46,11 @@ export default class NavBar extends React.Component {
                     <button class="button" id="babes" onClick={() => this.pageToBabes()}>Babes</button>
                     <button class="button"  id="merch" onClick={() => this.pageToMerch()}>Merch</button>
                     <button class="button" id="shows" onClick={() => this.pageToShows()}>Shows</button>
-                    <button class="button"  id="gallery" href="/#/gallery">Gallery</button>
-                    <button class="button"  id="music" href="/#/music">Music</button>
-                    <button class="button"  id="videos" href="/#/videos">Videos</button>
-                    <button class="button" id="contact" href="/#/contact">Contact Us</button>
-                    <button class="button"  id="signIn" href="/#/login">Sign In</button>
+                    <button class="button"  id="gallery" onClick={() => this.pageToGallery()}>Gallery</button>
+                    <button class="button"  id="music" onClick={() => this.pageToMusic()}>Music</button>
+                    <button class="button"  id="videos" onClick={() => this.pageToVideos()}>Videos</button>
+                    <button class="button" id="contact" onClick={() => this.pageToContact()}>Contact Us</button>
+                    <button class="button"  id="signIn" onClick={() => this.pageToLogin()}>Login</button>
                 </div>
             </div>
         );

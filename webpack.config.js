@@ -53,6 +53,6 @@ var config = {
          }
       ]
    },
-   plugins: [HtmlWebpackPluginConfig, new ExtractTextPlugin({ filename: '[name].css', disable: false, allChunks: true })]
+   plugins: [HtmlWebpackPluginConfig, new ExtractTextPlugin({ filename: '[name].css', disable: false, allChunks: true }), new ExtractTextPlugin({ filename: '[name].scss', disable: false, allChunks: true })]
 }
 module.exports = config;

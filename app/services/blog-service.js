@@ -1,6 +1,5 @@
+import request from '../config/superagent';
 import endpoints from '../config/endpoints';
-var Promise = require('promise');
-var superagent = require('superagent-promise')(require('superagent'), Promise);
 
 let BlogServices = {
     /**
@@ -8,7 +7,9 @@ let BlogServices = {
      * @param {object} blogPost - The blog post to be saved
      */
     createBlogPost(blogPost) {
-        return superagent('POST', endpoints.createBlogPost)
+        console.log(blogPost);
+        return request
+            .post(endpoints.createBlogPost)
             .send(blogPost)
             .end()
             .then((res) => {

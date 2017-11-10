@@ -1,6 +1,8 @@
 import React from 'react';
 import NavBar from '../nav-bar/nav-bar';
 import BlogService from '../../services/blog-service';
+import BlogStore from '../../stores/blog-store';
+import BlogActions from '../../actions/blog-actions';
 import './blog.css';
 import formExtract from '../../util/form-extract';
 import {Row, Col, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
@@ -8,7 +10,33 @@ import {Row, Col, FormControl, FormGroup, ControlLabel, Button} from 'react-boot
 export default class Blog extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            blogPosts: [],
+            loading: true
+        };
+
+        this.updateBlogData = this.updateBlogData.bind(this);
+    }
+
+    componentWillMount() {
+        BlogStore.addChangeListener(this.updateBlogData);
+    }
+
+    componentDidMount() {
+        BlogActions.getAllBlogPosts();
+    }
+
+    componentWillUnmount() {
+        BlogStore.removeChangeListener(this.updateBlogData);
+    }
+
+    updateBlogData() {
+        const state = {
+            blogPosts: BlogStore.getBlogs(),
+            loading: false
+        };
+
+        this.setState(state);
     }
 
     submitForm(event) {
@@ -21,7 +49,27 @@ export default class Blog extends React.Component {
             });
     }
 
+    renderBlogPost(blogPost) {
+        return (
+            <Row>
+                <Col>
+                    <h3>{blogPost.title}</h3>
+                </Col>
+                <Col>
+                    <h4>{blogPost.user}</h4>
+                </Col>
+                <Col>
+                    <p>{blogPost.date}</p>
+                </Col>
+                <Col>
+                    <p>{blogPost.post}</p>
+                </Col>
+            </Row>
+        );
+    }
+
     render() {
+        console.log(this.state);
       return (
           <div>
               <Row>
@@ -45,6 +93,11 @@ export default class Blog extends React.Component {
                       </form>
                   </Col>
               </Row>
+              {!this.state.loading && (this.state.blogPosts || []).map(blogPost => (
+                  <div key={blogPost._id}>
+                      {this.renderBlogPost(blogPost)}
+                  </div>
+              ))}
           </div>
       );
     }

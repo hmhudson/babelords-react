@@ -7,10 +7,20 @@ let BlogServices = {
      * @param {object} blogPost - The blog post to be saved
      */
     createBlogPost(blogPost) {
-        console.log(blogPost);
         return request
             .post(endpoints.createBlogPost)
             .send(blogPost)
+            .end()
+            .then((res) => {
+                return res.body;
+            });
+    },
+    /**
+     * Fetch all blog posts from db
+     */
+    fetchAllBlogPosts() {
+        return request
+            .get(endpoints.getBlogPost)
             .end()
             .then((res) => {
                 return res.body;

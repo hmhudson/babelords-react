@@ -4,7 +4,6 @@
 }
 
 #Ian {
-    margin-left: 40px;
     text-align: center;
 }
 
@@ -31,12 +30,20 @@
     margin-bottom: 40px;
 }
 
-.row {
-    margin-left: 40px;
-
+ul {
+    margin-top: 20px;
+  list-style-type: none;
+  font-size: 17px;
+  text-align: center;
 }
 
-body {
+.list-container {
+    vertical-align: middle;
+}
+
+
+
+.about-page {
     font-family: helvetica;
 }
 

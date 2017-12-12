@@ -1,3 +1,21 @@
 #shows {
     text-align: center;
+    font-weight: bold;
+}
+
+#header {
+    font-size: 28px;
+    text-decoration: underline;
+}
+
+#date {
+    font-size: 20px;
+}
+
+#location {
+    font-size: 20px;
+}
+
+#band {
+    font-size: 20px;
 }

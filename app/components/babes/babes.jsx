@@ -1,4 +1,5 @@
 import React from 'react';
+import {Row, Col} from 'react-bootstrap';
 import './babes.css'
 
 export default class Babes extends React.Component {
@@ -9,9 +10,9 @@ export default class Babes extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1 class="about">About</h1>
-                    <p class="about">
+            <div className="about-page">
+                <h1 className="about">About</h1>
+                    <p className="about">
                         Before there was "Babe Lords" there was "The Hannas,"--an ill-fated high school rock and roll band that burned
                         out seemingly as quickly as it had screeched its way onto the scene. To the dismay of the band's hordes of fans,
                         the glamour and romance of a youthful pursuit of punk rock freedom soon darkened in the face of ACT tests, curfews,
@@ -21,64 +22,58 @@ export default class Babes extends React.Component {
                         came a more firey fire that is Babe Lords. In the past, bassist Mandy Davis has referenced influences such as the Replacements,
                         Sleater-Kinney, Ke$ha, and the overwhelming, life-affirming, bellyscream feeling that fuels all feminists to scream when no one is listening.
                     </p>
-                    <br/>
-                    <br/>
-                    <h1 id="Ian">Ian</h1>
-                    <div class="row">
-                         <div class="col-sm-8 col-lg-5">
-                             <img src="http://imgur.com/M2i4gli.jpg" id="ianPic" alt="Ian drumming"/>
-                         </div>
-                        <h3 class="col-sm-4">
-                            Instrument: Drums, Vocals
-                            <br/>
-                            Favorite Halloween Movie: The Evil Dead
-                            <br/>
-                            Favorite song to play: Epicenter
-                            <br/>
-                            Favorite pizza topping: Pepperoni
-                            <br/>
-                            Favorite Beyonce song: ¯\_(ツ)_/¯
-                            <br/>
-                        </h3>
-                    </div>
-                    <br/>
-                    <h2 id="Mandy">Mandy</h2>
-                    <div class="row">
-                        <div class="col-sm-8 col-lg-5">
-                            <img src="http://imgur.com/afeC5gg.jpg" id="mandyPic" alt="Mandy playing bass"/>
-                        </div>
-                        <h3 id="Mandy">
-                            Instrument: Bass, Vocals
-                            <br/>
-                            Favorite Halloween Movie: Hocus Pocus
-                            <br/>
-                            Favorite song to play: Skirt
-                            <br/>
-                            Favorite pizza topping: Green pepper
-                            <br/>
-                            Favorite Beyonce song: Halo
-                            <br/>
-                        </h3>
-                    </div>
-                    <br/>
-                    <h2 id="Haley">Haley</h2>
-                    <div class="row">
-                        <div class="col-sm-8 col-lg-5">
-                            <img src="http://imgur.com/RIvkfx0.jpg" id="haleyPic" alt="Haley playing guitar"/>
-                        </div>
-                        <h3>
-                            Instrument: Guitar, Vocals
-                            <br/>
-                            Favorite Halloween Movie: Halloweentown
-                            <br/>
-                            Favorite Babe song to play: Spit/Housewife
-                            <br/>
-                            Favorite pizza topping: Steak
-                            <br/>
-                            Favorite Beyonce song: Sorry
-                            <br/>
-                        </h3>
-                    </div>
+                    <Row>
+                        <Col xs={12} sm={12} md={6} lg={6}>
+                            <h1 id="Ian">Ian</h1>
+                            <div>
+                                <img src="http://imgur.com/M2i4gli.jpg" id="ianPic" alt="Ian drumming"/>
+                            </div>
+                        </Col>
+                        <Col xs={12} sm={12} md={6} lg={6} className="list-container">
+                            <ul>
+                                <li><strong>Instrument:</strong> Drums, Vocals</li>
+                                <li><strong>Favorite Halloween Movie:</strong> The Evil Dead</li>
+                                <li><strong>Favorite song to play:</strong> Epicenter</li>
+                                <li><strong>Favorite pizza topping:</strong> Pepperoni</li>
+                                <li><strong>Favorite Beyonce song:</strong> ¯\_(ツ)_/¯</li>
+                            </ul>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={12} sm={12} md={6} lg={6}>
+                            <h1 id="Mandy">Mandy</h1>
+                            <div>
+                                <img src="http://imgur.com/afeC5gg.jpg" id="mandyPic" alt="Mandy playing bass"/>
+                            </div>
+                        </Col>
+                        <Col xs={12} sm={12} md={6} lg={6} className="list-container">
+                            <ul>
+                                <li><strong>Instrument:</strong> Bass, Vocals</li>
+                                <li><strong>Favorite Halloween Movie:</strong> Hocus Pocus</li>
+                                <li><strong>Favorite song to play:</strong> Skirt</li>
+                                <li><strong>Favorite pizza topping:</strong> Green Pepper</li>
+                                <li><strong>Favorite Beyonce song:</strong> Halo</li>
+                            </ul>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col xs={12} sm={12} md={6} lg={6}>
+                            <h1 id="Haley">Haley</h1>
+                            <div>
+                                <img src="http://imgur.com/RIvkfx0.jpg" id="haleyPic" alt="Haley playing guitar"/>
+                            </div>
+                        </Col>
+                        <Col xs={12} sm={12} md={6} lg={6} className="list-container">
+                            <ul>
+                                <li><strong>Instrument:</strong> Guitar, Vocals</li>
+                                <li><strong>Favorite Halloween Movie:</strong> Halloweentown</li>
+                                <li><strong>Favorite song to play:</strong> Spit/Housewife</li>
+                                <li><strong>Favorite pizza topping:</strong> Steak</li>
+                                <li><strong>Favorite Beyonce song:</strong> Sorry</li>
+                            </ul>
+                        </Col>
+                    </Row>
             </div>
         );
     }

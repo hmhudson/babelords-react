@@ -36,14 +36,23 @@ export default class Calendar extends React.Component {
     }
 
 
+    eventStyle(event) {
+      let style = {
+          backgroundColor: "#f44283"
+      };
+      return {
+        style: style
+     };
+    }
+
     render() {
-        console.log(testEvents);
         return (
             <div className='calendar-component'>
                 <BigCalendar
                   events={testEvents}
                   formats={propFormats}
                   components={{event: this.Event}}
+                  eventPropGetter={this.eventStyle}
                 />
             </div>
         );

@@ -45,7 +45,7 @@ export default class NavBar extends React.Component {
                 <div class="container btn-group-justified">
                     <button class="button" id="babes" onClick={() => this.pageToBabes()}>Babes</button>
                     <button class="button"  id="merch" onClick={() => this.pageToMerch()}>Merch</button>
-                    <button class="button" id="shows" onClick={() => this.pageToShows()}>Shows</button>
+                    <button class="button" id="calendar" onClick={() => this.pageToShows()}>Shows</button>
                     <button class="button"  id="gallery" onClick={() => this.pageToGallery()}>Gallery</button>
                     <button class="button"  id="music" onClick={() => this.pageToMusic()}>Music</button>
                     <button class="button"  id="videos" onClick={() => this.pageToVideos()}>Videos</button>

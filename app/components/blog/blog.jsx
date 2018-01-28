@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from '../nav-bar/nav-bar';
 import BlogService from '../../services/blog-service';
 import BlogStore from '../../stores/blog-store';
 import BlogActions from '../../actions/blog-actions';

@@ -1,0 +1,13 @@
+.images {
+    max-height: 200px;
+    max-width:200px;
+}
+
+.imageContainer {
+    display: inline-block;
+    margin: 10px;
+}
+
+.photo-gallery-component {
+    margin-top: 20px;
+}

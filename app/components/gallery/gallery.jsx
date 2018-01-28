@@ -3,6 +3,7 @@ import { Component } from 'react';
 import Lightbox from 'react-image-lightbox';
 import {Row, Col, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
 import _ from 'lodash';
+import './gallery.css';
 
 const images = [
   'https://i.imgur.com/hqN4uoo.jpg',
@@ -41,13 +42,15 @@ openLightbox(event) {
     const { photoIndex, isOpen } = this.state;
 
     return (
-      <div>
+      <div className="photo-gallery-component">
         <div>
             <Row>
                 {images.map((url, i) => (
+                 <div className="imageContainer">
                     <a href="#" onClick={this.openLightbox}>
-                        <img key={i} src={url}/>
+                        <img className="images" key={i} src={url}/>
                     </a>
+                </div>
                 ))}
             </Row>
         </div>

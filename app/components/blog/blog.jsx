@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import BlogService from '../../services/blog-service';
 import BlogStore from '../../stores/blog-store';
 import BlogActions from '../../actions/blog-actions';
@@ -58,7 +59,7 @@ export default class Blog extends React.Component {
                     <h4>{blogPost.user}</h4>
                 </Col>
                 <Col>
-                    <p>{blogPost.date}</p>
+                    <p>{moment(blogPost.date).format('MMMM Do, YYYY')}</p>
                 </Col>
                 <Col>
                     <p>{blogPost.post}</p>

@@ -1,8 +1,14 @@
 import React from 'react';
 import page from 'page';
 import pagePaths from '../../config/page';
-import {Button} from 'react-bootstrap';
+import {Button, Navbar, Nav, NavItem, Row, Col} from 'react-bootstrap';
 import './nav-bar.css';
+
+const style = {
+    "background-color":"#f44283",
+    "font":"bold"
+};
+
 export default class NavBar extends React.Component {
     constructor(props) {
         super(props);
@@ -39,19 +45,59 @@ export default class NavBar extends React.Component {
     render() {
         return (
             <div>
-                <div id="pictureExtend">
+                <div className="pictureExtend">
                     <img src="http://i.imgur.com/PLFPWPx.jpg" alt="Babe Lords logo" id="babeLogo" onClick={() => this.pageToHome()}/>
                 </div>
-                <div class="container btn-group-justified">
-                    <button class="button" id="babes" onClick={() => this.pageToBabes()}>Babes</button>
-                    <button class="button"  id="merch" onClick={() => this.pageToMerch()}>Merch</button>
-                    <button class="button" id="calendar" onClick={() => this.pageToShows()}>Shows</button>
-                    <button class="button"  id="gallery" onClick={() => this.pageToGallery()}>Gallery</button>
-                    <button class="button"  id="music" onClick={() => this.pageToMusic()}>Music</button>
-                    <button class="button"  id="videos" onClick={() => this.pageToVideos()}>Videos</button>
-                    <button class="button" id="contact" onClick={() => this.pageToContact()}>Contact Us</button>
-                    <button class="button"  id="signIn" onClick={() => this.pageToLogin()}>Login</button>
-                </div>
+                <Navbar style={style} inverse collapseOnSelect>
+                  <Navbar.Collapse>
+                    <Nav>
+                        <Row>
+                            <Col xs={2}/>
+                <Col xs={1}>
+                      <NavItem eventKey={1} onClick={() => this.pageToBabes()}>
+                        Babes
+                      </NavItem>
+                  </Col>
+                  <Col xs={1}>
+                      <NavItem eventKey={2} onClick={() => this.pageToMerch()}>
+                        Merch
+                      </NavItem>
+                </Col>
+                <Col xs={1}>
+                      <NavItem eventKey={3} onClick={() => this.pageToShows()}>
+                          Shows
+                      </NavItem>
+                </Col>
+                <Col xs={1}>
+                      <NavItem eventKey={4} onClick={() => this.pageToGallery()}>
+                          Gallery
+                      </NavItem>
+                </Col>
+                <Col xs={1}>
+                      <NavItem eventKey={5} onClick={() => this.pageToMusic()}>
+                          Music
+                      </NavItem>
+                </Col>
+                <Col xs={1}>
+                      <NavItem eventKey={6} onClick={() => this.pageToVideos()}>
+                          Videos
+                      </NavItem>
+                </Col>
+                <Col xs={1}>
+                      <NavItem eventKey={7} onClick={() => this.pageToContact()}>
+                          Contact
+                      </NavItem>
+                </Col>
+                <Col xs={1}>
+                      <NavItem eventKey={8} onClick={() => this.pageToLogin()}>
+                          Login
+                      </NavItem>
+                </Col>
+                <Col xs={2}/>
+                  </Row>
+                    </Nav>
+                  </Navbar.Collapse>
+                </Navbar>
             </div>
         );
     }

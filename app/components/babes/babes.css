@@ -17,17 +17,9 @@
     text-align: center;
 }
 
-#ianPic{
+.image-circle {
+    border-radius: 50%;
     height: 400px;
-}
-
-#mandyPic {
-    height: 400px;
-}
-
-#haleyPic{
-    height: 400px;
-    margin-bottom: 40px;
 }
 
 ul {

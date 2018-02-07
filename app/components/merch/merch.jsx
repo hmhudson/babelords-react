@@ -1,5 +1,14 @@
 import React from 'react';
+import etsyServices from '../../services/merch-service';
+
+
+
 export default class Merch extends React.Component {
+
+    componentWillMount() {
+        etsyServices.getStore();
+    }
+
    render() {
       return (
          <div className="site-index-route">

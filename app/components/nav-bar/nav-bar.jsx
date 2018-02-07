@@ -5,7 +5,7 @@ import {Button, Navbar, Nav, NavItem, Row, Col} from 'react-bootstrap';
 import './nav-bar.css';
 
 const style = {
-    "background-color":"#f44283",
+    backgroundColor:"#f44283",
     "font":"bold"
 };
 

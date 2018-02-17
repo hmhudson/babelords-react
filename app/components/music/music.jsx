@@ -27,6 +27,17 @@ export default class Music extends React.Component {
                         <iframe style={style} src="https://bandcamp.com/EmbeddedPlayer/track=844489545/size=large/bgcol=ffffff/linkcol=7137dc/tracklist=false/transparent=true/" seamless><a href="http://babelords.bandcamp.com/track/jack-n-coke">Jack N Coke by Babe Lords</a></iframe>
                     </Col>
                 </Row>
+                <Row>
+                    <Col xs={4}>
+                        <iframe style={style} src="https://bandcamp.com/EmbeddedPlayer/track=2181316982/size=large/bgcol=ffffff/linkcol=7137dc/tracklist=false/transparent=true/" seamless><a href="http://babelords.bandcamp.com/track/cool-girl">Cool Girl by Babe Lords</a></iframe>
+                    </Col>
+                    <Col xs={4}>
+                        <iframe style={style} src="https://bandcamp.com/EmbeddedPlayer/track=2181316982/size=large/bgcol=ffffff/linkcol=7137dc/tracklist=false/transparent=true/" seamless><a href="http://babelords.bandcamp.com/track/cool-girl">Cool Girl by Babe Lords</a></iframe>
+                    </Col>
+                    <Col xs={4}>
+                        <iframe style={style} src="https://bandcamp.com/EmbeddedPlayer/track=2181316982/size=large/bgcol=ffffff/linkcol=7137dc/tracklist=false/transparent=true/" seamless><a href="http://babelords.bandcamp.com/track/cool-girl">Cool Girl by Babe Lords</a></iframe>
+                    </Col>
+                </Row>
             </div>
         );
     }

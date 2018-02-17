@@ -11,7 +11,7 @@ export default class Babes extends React.Component {
     render() {
         return (
             <div className="about-page">
-                <h1 className="about">About</h1>
+                <h1 className="about">About Us</h1>
                     <div>
                         <p className="about">
                             Before there was "Babe Lords" there was "The Hannas,"--an ill-fated high school rock and roll band that burned

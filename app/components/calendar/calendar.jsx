@@ -12,13 +12,13 @@ const propFormats = {
 
 var testEvents = [{
     title: "Babe Lords ft. Beyonce",
-    start: moment('12/21/17'),
-    end: moment("12/21/17"),
+    start: moment('2/21/18'),
+    end: moment("2/21/18"),
     fb_URL: "https://www.facebook.com/events/1208541792609819/"
 }, {
     title: "Babe Lords ft. Ke$ha",
-    start: moment("12/23/17"),
-    end: moment("12/23/17"),
+    start: moment("2/23/18"),
+    end: moment("2/23/18"),
     fb_URL: "https://www.facebook.com/events/1208541792609819/"
 }];
 

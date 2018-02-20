@@ -3,3 +3,21 @@
     max-width:225px;
     border-radius: 50%;
 }
+
+.panel-default>.panel-heading {
+    background-color: #f44283;
+
+}
+
+.panel-heading {
+    background-color: #f44283;
+}
+
+.title {
+    font-size: 20px;
+    color: white;
+}
+
+.description {
+    font-size: 16px;
+}

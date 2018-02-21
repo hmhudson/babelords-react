@@ -26,7 +26,6 @@ export default class NavBar extends React.Component {
     pageToHome() {
         page(pagePaths.home);
     }
-
     pageToGallery() {
         page(pagePaths.gallery);
     }
@@ -42,6 +41,10 @@ export default class NavBar extends React.Component {
     pageToLogin() {
         page(pagePaths.login);
     }
+    pageToSignup() {
+        page(pagePaths.signup);
+    }
+
     render() {
         return (
             <div>
@@ -91,6 +94,11 @@ export default class NavBar extends React.Component {
                 <Col xs={1}>
                       <NavItem eventKey={8} onClick={() => this.pageToLogin()}>
                           Login
+                      </NavItem>
+                </Col>
+                <Col xs={1}>
+                      <NavItem eventKey={8} onClick={() => this.pageToSignup()}>
+                          Sign Up
                       </NavItem>
                 </Col>
                 <Col xs={2}/>

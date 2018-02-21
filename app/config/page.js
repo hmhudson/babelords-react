@@ -8,4 +8,5 @@ export default {
   videos: '/#/videos',
   contact: '/#/contact',
   login: '/#/login',
+  signup:'/#/signup'
 };

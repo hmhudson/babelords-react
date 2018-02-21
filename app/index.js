@@ -17,6 +17,7 @@ import Login from './components/login/login';
 import Music from './components/music/music';
 import Shows from './components/shows/shows';
 import Videos from './components/videos/videos';
+import Signup from './components/signup/signup';
 
 ReactDOM.render(
   <Router>
@@ -32,5 +33,6 @@ ReactDOM.render(
       <Route path ="/music" component={Music} />
       <Route path ="/shows" component={Shows} />
       <Route path = "/videos" component= {Videos} />
+      <Route path = "/signup" component= {Signup} />
     </div>
   </Router>, document.getElementById('root'));

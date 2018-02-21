@@ -22,6 +22,8 @@ export default class Login extends React.Component {
 
                   <button id="button" type="submit">Login</button>
                   <Checkbox type="checkbox" checked="checked">Remember Me</Checkbox>
+
+                  <p>Not a user?</p><a href="#/signup">Sign up here!</a>
                 </Col>
             </Row>
             </div>

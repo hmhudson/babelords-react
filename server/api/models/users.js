@@ -80,18 +80,18 @@ const UserSchema = new mongoose.Schema(
 /**
  * Password hash middleware.
  */
-UserSchema.pre('save', function save(next) {
-  var user = this;
-  if (!user.isModified('authentication.password')) return next();
-  bcrypt.genSalt(5, (err, salt) => {
-    if (err) return next(err);
-    bcrypt.hash(user.authentication.password, salt, null, (hashErr, hash) => {
-      if (hashErr) return next(hashErr);
-      user.authentication.password = hash;
-      next();
-    });
-  });
-});
+// UserSchema.pre('save', function save(next) {
+//   var user = this;
+//   if (!user.isModified('authentication.password')) return next();
+//   bcrypt.genSalt(5, (err, salt) => {
+//     if (err) return next(err);
+//     bcrypt.hash(user.authentication.password, salt, null, (hashErr, hash) => {
+//       if (hashErr) return next(hashErr);
+//       user.authentication.password = hash;
+//       next();
+//     });
+//   });
+// });
 
 /**
  * Methods
@@ -215,7 +215,17 @@ UserSchema.statics = {
         $gte: new Date(),
       },
     });
-  }
+},
+/**
+ * Creates a new user in the DB
+ *
+ * @param  {Object} newUser = User to be saved
+ * @return {Promise} Returns a promise that resolves upon completion of the request
+ */
+ createUser(newUser){
+     let userObject = new this(newUser);
+     return userObject.save();
+ }
 };
 
 module.exports = mongoose.model('User', UserSchema);

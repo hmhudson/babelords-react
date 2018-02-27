@@ -26,7 +26,7 @@ const BlogSchema = new mongoose.Schema({
 
 BlogSchema.statics = {
     createBlogPost(blogPost) {
-        var blogPostObject = new this(blogPost);
+        let blogPostObject = new this(blogPost);
         return blogPostObject.save();
     },
     fetchPosts() {

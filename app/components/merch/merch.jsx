@@ -62,7 +62,7 @@ export default class Merch extends React.Component {
             <Row>
             {!this.state.loading && (this.state.listings || []).map(listing => (
                 <div key={listing.listing_id}>
-                        <Col xs={12} sm={12} md={6} lg={3}>
+                        <Col xs={12} sm={12} md={6} lg={4}>
                             {this.renderListings(listing)}
                         </Col>
                 </div>

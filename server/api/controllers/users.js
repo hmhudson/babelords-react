@@ -14,14 +14,9 @@ module.exports = {
                 lastName: newUserObj.lastName
             },
             lastLogin: new Date(),
-            authentication: {
-                password: newUserObj.password,
-                tokens: [{
-                    token: 'placeholder',
-                    created: new Date(),
-                    expires: new Date()
-                }]
-            }
+            password: newUserObj.password,
+            resetPasswordToken: 'placeholder',
+            resetPasswordExpires: new Date()
         };
 
         User.createUser(newUser)

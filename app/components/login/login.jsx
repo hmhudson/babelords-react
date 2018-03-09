@@ -14,7 +14,7 @@ export default class Login extends React.Component {
             <div class="container">
             <Row>
                 <Col xs={4} xsOffset={4}>
-                  <label><b>Username</b></label>
+                  <label><b>Email</b></label>
                   <input className="input" type="text" placeholder="Enter Username" name="uname" required/>
 
                   <label><b>Password</b></label>

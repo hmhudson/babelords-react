@@ -3,6 +3,45 @@ const User = require('../models/users');
 const HTTPStatus = require('http-status');
 
 module.exports = {
+    login(req, res) {
+        const email = req.body.email;
+        const password = req.body.password;
+
+        User.findUserByEmail(email)
+        .then((existingUser) => {
+            if(!existingUser){
+                return res.json({
+                    status: 0,
+                    err: "Your login details could not be verified. Please try again."
+                });
+            }
+
+            existingUser.comparePassword(password, (err, match) => {
+                if (err) {
+                    return res.json({
+                        status: 0,
+                        err: "Your login details could not be verified. Please try again."
+                    });
+                }
+
+                // Generate new JWT
+                const newToken = existingUser.generateToken();
+
+                const userReturnObj = {
+                    email: existingUser.email,
+                    id: existingUser._id,
+                    profile: existingUser.profile
+                };
+
+                return res.json({
+                    status: 1,
+                    token: `JWT ${newToken}`,
+                    user: userReturnObj
+                });
+            });
+        });
+    },
+
     createUser(req, res) {
         // Transform user object
         const newUserObj = req.body;
@@ -15,22 +54,34 @@ module.exports = {
             },
             lastLogin: new Date(),
             password: newUserObj.password,
-            resetPasswordToken: 'placeholder',
-            resetPasswordExpires: new Date()
         };
 
-        User.createUser(newUser)
-            .then((createdUser) => {
-                // Catch Error
-                if (!createdUser) {
-                    return res.status(HTTPStatus.UNPROCESSABLE_ENTITY).json({status: 0, error: "Error creating user"});
-                }
+        User.findUserByEmail(newUser.email)
+        .then((existingUser) => {
+            if(existingUser){
+                return res.json({
+                    status: 0,
+                    err: "This email is already linked to an account."
+                });
+            }
 
-                // Return Success
+            User.createUser(newUser)
+            .then((createdUser) => {
+                const userReturnObj = {
+                    email: createdUser.email,
+                    id: createdUser._id,
+                    profile: createdUser.profile
+                };
+
+                // Generate new JWT
+                const newToken = createdUser.generateToken();
+
                 return res.json({
                     status: 1,
-                    createdUser: createdUser
+                    token: `JWT ${newToken}`,
+                    user: userReturnObj
                 });
             });
+        });
     }
 }

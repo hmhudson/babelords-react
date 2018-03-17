@@ -3,6 +3,7 @@
  * Module dependencies.
  */
  "use strict";
+require('dotenv').config();
 var app = require('./express-app');
 var http = require('http');
 /**

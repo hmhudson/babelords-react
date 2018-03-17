@@ -15,6 +15,17 @@ let userServices = {
                 return res.body;
             });
     },
+
+    loginUser(User) {
+        return request
+        .post(endpoints.loginUser)
+        .send(User)
+        .end()
+        .then((res) => {
+            console.log(res.body);
+            return res.body;
+        });
+    }
 }
 
 export default userServices;

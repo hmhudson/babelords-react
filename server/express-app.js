@@ -4,6 +4,7 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+var passport = require('passport');
 
 //Bring in the data model
 require("./api/mongoose/mongoose");
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended : false
 }));
+app.use(passport.initialize());
 
 //app.use('/bower_components', express.static(path.join(__dirname, '../bower_components')));
 

@@ -2,11 +2,12 @@
 /**
  * Defining a User Model in mongoose
  */
+ const jwt= require('jsonwebtoken');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 const _ = require('lodash');
 const moment = require('moment');
-const config = require('../config/secrets');
+const secrets = require('../config/secrets');
 
 /*
  User Schema
@@ -41,8 +42,6 @@ const UserSchema = new mongoose.Schema(
       default: false,
     },
     lastLogin: Date,
-    resetPasswordToken: { type: String },
-    resetPasswordExpires: { type: Date }
   },
   {
     collection: 'users',
@@ -73,11 +72,23 @@ UserSchema.pre('save', function(next) {
  */
 UserSchema.methods = {
     comparePassword(candidatePassword, cb) {
-  bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
-    if (err) { return cb(err); }
-    cb(null, isMatch);
-  });
-}
+      bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
+        if (err) { return cb(err); }
+        cb(null, isMatch);
+        });
+    },
+
+    generateToken() {
+        const userReturnObj = {
+            email: this.email,
+            id: this._id,
+            profile: this.profile
+        };
+        console.log(secrets, 'SECRET');
+        return jwt.sign(userReturnObj, secrets.jwtSecret, {
+            expiresIn: 604800 //in seconds
+        });
+    }
 };
 /**
  * Statics

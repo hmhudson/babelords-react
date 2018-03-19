@@ -2,7 +2,9 @@ import React from 'react';
 import page from 'page';
 import pagePaths from '../../config/page';
 import {Button, Navbar, Nav, NavItem, Row, Col} from 'react-bootstrap';
+import userStore from '../../stores/user-store';
 import './nav-bar.css';
+console.log(userStore.isLoggedIn());
 
 const style = {
     backgroundColor:"#f44283",
@@ -91,11 +93,11 @@ export default class NavBar extends React.Component {
                           Contact
                       </NavItem>
                 </Col>
-                <Col xs={1}>
+                {!userStore.isLoggedIn() && <Col xs={1}>
                       <NavItem eventKey={8} onClick={() => this.pageToLogin()}>
                           Login
                       </NavItem>
-                </Col>
+                </Col>}
                 <Col xs={1}>
                       <NavItem eventKey={8} onClick={() => this.pageToSignup()}>
                           Sign Up

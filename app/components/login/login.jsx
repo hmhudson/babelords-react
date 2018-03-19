@@ -1,5 +1,7 @@
 import React from 'react';
 import {Row, Col, FormControl, FormGroup, ControlLabel, Button, Checkbox} from 'react-bootstrap';
+import page from 'page';
+import pagePaths from '../../config/page';
 import formExtract from '../../util/form-extract';
 import UserService from '../../services/user-service';
 import './login.css';
@@ -9,7 +11,9 @@ import './login.css';
 export default class Login extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            errorMessage: null
+        };
         this.submitForm = this.submitForm.bind(this);
     }
 
@@ -18,7 +22,13 @@ export default class Login extends React.Component {
         const userObj = formExtract(event);
         UserService.loginUser(userObj)
             .then((res) => {
-                console.log(res);
+                if (res.err) {
+                    //Display error message
+                    this.setState({errorMessage: res.err});
+                } else {
+                    //Redirect to homepage
+                    page(pagePaths.home);
+                }
             });
     }
 
@@ -36,6 +46,7 @@ export default class Login extends React.Component {
                         <ControlLabel>Password*</ControlLabel>
                         <FormControl type="password" name="password" placeholder="Password" required/>
                     </FormGroup>
+                {this.state.errorMessage && <p className="error">{this.state.errorMessage}</p>}
                   <button id="button" type="submit">Login</button>
                   <p>Not a user?</p><a href="#/signup">Sign up here!</a>
                   </form>

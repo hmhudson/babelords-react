@@ -84,7 +84,7 @@ UserSchema.methods = {
             id: this._id,
             profile: this.profile
         };
-        console.log(secrets, 'SECRET');
+
         return jwt.sign(userReturnObj, secrets.jwtSecret, {
             expiresIn: 604800 //in seconds
         });

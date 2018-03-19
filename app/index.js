@@ -6,7 +6,7 @@ import {
   Switch,
   Link
 } from 'react-router-dom'
-import App from './App.jsx';
+import { CookiesProvider } from 'react-cookie';
 import Merch from './components/merch/merch';
 import Blog from './components/blog/blog';
 import NavBar from './components/nav-bar/nav-bar';
@@ -20,11 +20,11 @@ import Videos from './components/videos/videos';
 import Signup from './components/signup/signup';
 
 ReactDOM.render(
+<CookiesProvider>
   <Router>
     <div>
     <NavBar/>
       <Route exact path="/" component={Blog} />
-      <Route path="/app" component={App} />
       <Route path="/merch" component={Merch} />
       <Route path="/babes" component={Babes} />
       <Route path ="/contact" component={Contact} />
@@ -35,4 +35,5 @@ ReactDOM.render(
       <Route path = "/videos" component= {Videos} />
       <Route path = "/signup" component= {Signup} />
     </div>
-  </Router>, document.getElementById('root'));
+  </Router>
+</CookiesProvider>, document.getElementById('root'));

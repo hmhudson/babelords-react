@@ -1,5 +1,8 @@
+import { Cookies } from 'react-cookie';
 import request from '../config/superagent';
 import endpoints from '../config/endpoints';
+
+const cookie = new Cookies();
 
 let userServices = {
     /**
@@ -12,7 +15,17 @@ let userServices = {
             .send(newUser)
             .end()
             .then((res) => {
+                // Handle error
+                if (res.body.status === 0) {
+                    return res.body;
+                }
+
+                // TODO set cookie expiration date
+                // Set the cookie
+                cookie.set('token', res.body.token, { path: '/', expires });
+
                 return res.body;
+
             });
     },
 
@@ -22,7 +35,14 @@ let userServices = {
         .send(User)
         .end()
         .then((res) => {
-            console.log(res.body);
+            // Handle error
+            if (res.body.status === 0) {
+                return res.body;
+            }
+
+            // Set the cookie
+            cookie.set('token', res.body.token, { path: '/' });
+
             return res.body;
         });
     }

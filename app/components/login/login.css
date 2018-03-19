@@ -36,6 +36,9 @@ button:hover {
     padding: 16px;
 }
 
+.error {
+    color: red;
+}
 
 span.psw {
     float: right;

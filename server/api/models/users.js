@@ -82,7 +82,8 @@ UserSchema.methods = {
         const userReturnObj = {
             email: this.email,
             id: this._id,
-            profile: this.profile
+            profile: this.profile,
+            admin: this.admin
         };
 
         return jwt.sign(userReturnObj, secrets.jwtSecret, {

@@ -1,10 +1,12 @@
 import React from 'react';
 import page from 'page';
+import { Cookies } from 'react-cookie';
 import pagePaths from '../../config/page';
 import {Button, Navbar, Nav, NavItem, Row, Col} from 'react-bootstrap';
 import userStore from '../../stores/user-store';
 import './nav-bar.css';
-console.log(userStore.isLoggedIn());
+
+const cookie = new Cookies();
 
 const style = {
     backgroundColor:"#f44283",
@@ -15,6 +17,7 @@ export default class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+        this.logout = this.logout.bind(this);
     }
     pageToMerch() {
       page(pagePaths.merch);
@@ -45,6 +48,15 @@ export default class NavBar extends React.Component {
     }
     pageToSignup() {
         page(pagePaths.signup);
+    }
+
+    logout() {
+        //Destroy the cookie
+        cookie.remove('token', { path: '/' });
+        //Rerender NavBar
+        this.setState({});
+        //Redirect to homepage
+        page(pagePaths.home);
     }
 
     render() {
@@ -98,11 +110,16 @@ export default class NavBar extends React.Component {
                           Login
                       </NavItem>
                 </Col>}
-                <Col xs={1}>
+                {!userStore.isLoggedIn() && <Col xs={1}>
                       <NavItem eventKey={8} onClick={() => this.pageToSignup()}>
                           Sign Up
                       </NavItem>
-                </Col>
+                </Col>}
+                {userStore.isLoggedIn() && <Col xs={1}>
+                      <NavItem eventKey={8} onClick={() => this.logout()}>
+                          Log Out
+                      </NavItem>
+                </Col>}
                 <Col xs={2}/>
                   </Row>
                     </Nav>

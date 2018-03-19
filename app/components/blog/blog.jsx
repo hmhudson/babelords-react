@@ -3,9 +3,10 @@ import moment from 'moment';
 import BlogService from '../../services/blog-service';
 import BlogStore from '../../stores/blog-store';
 import BlogActions from '../../actions/blog-actions';
-import './blog.css';
 import formExtract from '../../util/form-extract';
 import {Row, Col, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
+import userStore from '../../stores/user-store';
+import './blog.css';
 
 export default class Blog extends React.Component {
     constructor(props) {
@@ -69,10 +70,10 @@ export default class Blog extends React.Component {
     }
 
     render() {
-        console.log(this.state);
       return (
           <div>
-              <Row>
+              {userStore.isAdmin() &&
+                  <Row>
                   <Col xs={8} xsOffset={2}>
                       <form className="blog-post-form" onSubmit={this.submitForm}>
                           <FormGroup controlId="formControlTitle">
@@ -92,7 +93,7 @@ export default class Blog extends React.Component {
                           </FormGroup>
                       </form>
                   </Col>
-              </Row>
+              </Row>}
               {!this.state.loading && (this.state.blogPosts || []).map(blogPost => (
                   <div key={blogPost._id}>
                       {this.renderBlogPost(blogPost)}

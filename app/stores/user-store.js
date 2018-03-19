@@ -50,11 +50,21 @@ class UserStore extends EventEmitter {
       if (!_.isEmpty(this.userData.token)) {
           const currentTime = Date.now().valueOf() / 1000;
           const token = jwtDecode(this.userData.token);
-          console.log(token.exp, currentTime);
           if (token.exp > currentTime) {
               return true;
           }
       }
+      return false;
+  }
+
+  isAdmin() {
+      if (!_.isEmpty(this.userData.token)) {
+          const token = jwtDecode(this.userData.token);
+          if (token.admin) {
+              return true;
+          }
+      }
+
       return false;
   }
 }

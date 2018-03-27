@@ -6,6 +6,7 @@ import BlogActions from '../../actions/blog-actions';
 import formExtract from '../../util/form-extract';
 import {Row, Col, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
 import userStore from '../../stores/user-store';
+import Comments from '../comments/comments';
 import './blog.css';
 
 export default class Blog extends React.Component {
@@ -52,24 +53,47 @@ export default class Blog extends React.Component {
 
     renderBlogPost(blogPost) {
         return (
-            <Row>
-                <Col>
-                    <h3>{blogPost.title}</h3>
-                </Col>
-                <Col>
-                    <h4>{blogPost.user}</h4>
-                </Col>
-                <Col>
-                    <p>{moment(blogPost.date).format('MMMM Do, YYYY')}</p>
-                </Col>
-                <Col>
-                    <p>{blogPost.post}</p>
-                </Col>
-            </Row>
+            <div>
+                <Row>
+                    <Col xs={8} xsOffset={2}>
+                        <Col>
+                            <h3>{blogPost.title}</h3>
+                        </Col>
+                        <Col>
+                            <h4>{blogPost.user}</h4>
+                        </Col>
+                        <Col>
+                            <p>{moment(blogPost.date).format('MMMM Do, YYYY')}</p>
+                        </Col>
+                        <Col>
+                            <p>{blogPost.post}</p>
+                        </Col>
+                    </Col>
+                </Row>
+
+                <Row>
+                    <Col xs={4} xsOffset={4}>
+                    <FormGroup controlId="formControlComment">
+                        <ControlLabel>Comment</ControlLabel>
+                        <FormControl componentClass="textarea" name="newComment" placeholder="Leave us a comment!" required/>
+                    </FormGroup>
+                    </Col>
+                </Row>
+                <Row>
+                    <button className="submit-button">Submit</button>
+                </Row>
+
+                <Row>
+                    <Col>
+                      <Comments comments={blogPost.comments} />
+                   </Col>
+                </Row>
+            </div>
         );
     }
 
     render() {
+        console.log(this.state.blogPosts);
       return (
           <div>
               {userStore.isAdmin() &&

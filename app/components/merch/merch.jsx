@@ -48,7 +48,7 @@ export default class Merch extends React.Component {
                     <h3>${listing.price}</h3>
                     <a href={listing.url}><img className="listing-image" src={listing.MainImage.url_fullxfull}/></a>
                     <p className="description">{listing.description}</p>
-                    <a href={listing.url}>Purchase in Store</a>
+                    <a href={listing.url} target="_blank">Purchase in Store</a>
                 </Panel>
             </div>
         )

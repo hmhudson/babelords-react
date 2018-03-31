@@ -8,6 +8,7 @@ var userController = require('./controllers/users');
 // Blog Endpoints
 router.post('/blog/createPost', blogController.createPost);
 router.get('/blog/fetchPosts', blogController.fetchPosts);
+router.post('/blog/createComment', blogController.createComment);
 
 // User endpoints
 router.post('/user/login', userController.login);

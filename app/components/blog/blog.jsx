@@ -70,22 +70,9 @@ export default class Blog extends React.Component {
                         </Col>
                     </Col>
                 </Row>
-
-                <Row>
-                    <Col xs={4} xsOffset={4}>
-                    <FormGroup controlId="formControlComment">
-                        <ControlLabel>Comment</ControlLabel>
-                        <FormControl componentClass="textarea" name="newComment" placeholder="Leave us a comment!" required/>
-                    </FormGroup>
-                    </Col>
-                </Row>
-                <Row>
-                    <button className="submit-button">Submit</button>
-                </Row>
-
                 <Row>
                     <Col>
-                      <Comments comments={blogPost.comments} />
+                      <Comments blogPost={blogPost}  />
                    </Col>
                 </Row>
             </div>

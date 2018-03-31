@@ -9,7 +9,8 @@ const CommentSchema = new mongoose.Schema({
         default: new Date()
     },
     user: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
         required: true
     },
     comment: {
@@ -52,6 +53,15 @@ BlogSchema.statics = {
             .sort({date: -1})
             .lean()
             .exec();
+    },
+    createComment(blogPostId, comment) {
+        return this.findOneAndUpdate(
+            { _id: blogPostId },
+            { $push: { comments: comment } },
+            { new: true }
+        )
+        .lean()
+        .exec();
     }
 };
 

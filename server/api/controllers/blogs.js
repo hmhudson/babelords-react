@@ -39,5 +39,28 @@ module.exports = {
                     blogPosts: blogPosts
                 });
             })
+    },
+
+    createComment(req, res) {
+        const commentObj = req.body;
+        const blogPostId = commentObj.blogPostId;
+        const newComment = {
+            user: commentObj.userId,
+            comment: commentObj.newComment
+        };
+
+        Blog.createComment(blogPostId, newComment)
+            .then((updatedBlogPost) => {
+                // Catch Error
+                if (!updatedBlogPost) {
+                    return res.status(HTTPStatus.UNPROCESSABLE_ENTITY).json({status: 0, error: "Error updating blog posts"});
+                }
+
+                // Return Success
+                return res.json({
+                    status: 1,
+                    updatedBlogPost: updatedBlogPost
+                });
+            });
     }
 };

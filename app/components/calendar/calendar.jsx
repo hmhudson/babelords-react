@@ -12,15 +12,21 @@ const propFormats = {
 
 var testEvents = [{
     title: "Babe Lords ft. Beyonce",
-    start: moment('3/21/18'),
-    end: moment("3/21/18"),
+    start: moment('3/28/18'),
+    end: moment("3/28/18"),
     fb_URL: "https://www.facebook.com/events/1208541792609819/"
 }, {
-    title: "Babe Lords ft. Ke$ha",
-    start: moment("3/23/18"),
-    end: moment("3/23/18"),
+    title: "Babe Lords Album Release show",
+    start: moment("5/05/18"),
+    end: moment("5/05/18"),
     fb_URL: "https://www.facebook.com/events/1208541792609819/"
-}];
+}, {
+    title: "Babe Lords with Skating Polly",
+    start: moment("6/03/18"),
+    end: moment("6/03/18"),
+    fb_URL: "https://www.facebook.com/events/1208541792609819/"
+}
+];
 
 
 export default class Calendar extends React.Component {

@@ -25,7 +25,20 @@ let BlogServices = {
             .then((res) => {
                 return res.body;
             });
-    }
+    },
+    /**
+     * Creates a new comment in the db
+     * @param {object} comment - The comment to be saved
+     */
+    createComment(comment) {
+        return request
+            .post(endpoints.createComment)
+            .send(comment)
+            .end()
+            .then((res) => {
+                return res.body;
+            });
+    },
 }
 
 export default BlogServices;

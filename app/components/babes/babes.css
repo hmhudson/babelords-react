@@ -1,20 +1,23 @@
 .about {
     margin-left: 40px;
     margin-right: 40px;
-}
-
-#Ian {
     text-align: center;
-}
-
-#Mandy {
     margin-left: 40px;
-    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    line-height: 51px;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
 }
 
-#Haley {
-    margin-left: 40px;
-    text-align: center;
+.band-bio {
+     margin-top: 20px;
+     font-size: 14px;
+     font-style: normal;
+     font-family: 'Droid Serif', serif;
+     line-height: 23px;
+     text-align: center;
 }
 
 .image-circle {
@@ -22,18 +25,39 @@
     height: 400px;
 }
 
-ul {
-    margin-top: 20px;
-  list-style-type: none;
-  font-size: 17px;
+.babe {
+    text-align: center;
+    margin-left: 40px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    line-height: 51px;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 15 0 15px 0;
+}
+
+.bio {
+  margin-top: 20px;
+  font-size: 14px;
+  font-family: 'Droid Serif', serif;
+  line-height: 23px;
   text-align: center;
+  font-style: normal;
+}
+
+.list {
+    font-family: 'Droid Serif', serif;
+    list-style-type: none;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 23px;
+    margin: 0 0 23px 0;
 }
 
 .list-container {
     vertical-align: middle;
 }
-
-
 
 .about-page {
     font-family: helvetica;

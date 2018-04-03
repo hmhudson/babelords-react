@@ -45,7 +45,7 @@ export default class Merch extends React.Component {
                     <Panel.Heading>
                         <Panel.Title componentClass="h1" className="title">{listing.title}</Panel.Title>
                     </Panel.Heading>
-                    <h3>${listing.price}</h3>
+                    <h3 className="price">${listing.price}</h3>
                     <a href={listing.url}><img className="listing-image" src={listing.MainImage.url_fullxfull}/></a>
                     <p className="description">{listing.description}</p>
                     <a href={listing.url} target="_blank">Purchase in Store</a>
@@ -58,7 +58,6 @@ export default class Merch extends React.Component {
    render() {
       return (
          <div className="site-index-route">
-            <h1>MERCH</h1>
             <Row>
             {!this.state.loading && (this.state.listings || []).map(listing => (
                 <div key={listing.listing_id}>

@@ -1,3 +1,23 @@
 .error {
     color: red;
 }
+
+.header {
+    text-align: center;
+    margin-left: 40px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    line-height: 51px;
+    font-size: 35px;
+    text-transform: uppercase;
+    margin: 15 0 15px 0;
+}
+
+.create-user-form {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
+
+.button {
+    font-size: 20px;
+}

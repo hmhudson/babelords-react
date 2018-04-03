@@ -1,21 +1,10 @@
-#shows {
+.shows {
     text-align: center;
-    font-weight: bold;
-}
-
-#header {
-    font-size: 28px;
-    text-decoration: underline;
-}
-
-#date {
-    font-size: 20px;
-}
-
-#location {
-    font-size: 20px;
-}
-
-#band {
-    font-size: 20px;
+    margin-left: 40px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    line-height: 51px;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 15 0 15px 0;
 }

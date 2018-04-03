@@ -59,16 +59,16 @@ export default class Blog extends React.Component {
                 <Row>
                     <Col xs={8} xsOffset={2}>
                         <Col>
-                            <h3>{blogPost.title}</h3>
+                            <h3 className="blog-title">{blogPost.title}</h3>
                         </Col>
                         <Col>
-                            <h4>{blogPost.user}</h4>
+                            <h4 className="user-date">By: {blogPost.user}</h4>
                         </Col>
                         <Col>
-                            <p>{moment(blogPost.date).format('MMMM Do, YYYY')}</p>
+                            <p className="user-date">{moment(blogPost.date).format('MMMM Do, YYYY')}</p>
                         </Col>
                         <Col>
-                            <p>{blogPost.post}</p>
+                            <p className="blog-post">{blogPost.post}</p>
                         </Col>
                     </Col>
                 </Row>
@@ -80,6 +80,7 @@ export default class Blog extends React.Component {
             </div>
         );
     }
+
 
     render() {
       return (

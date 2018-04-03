@@ -1,5 +1,5 @@
 export default {
-    home: '/#/',
+  home: '/#/',
   merch: '/#/merch',
   babes: '/#/babes',
   shows: '/#/shows',

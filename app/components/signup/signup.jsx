@@ -44,7 +44,7 @@ export default class Signup extends React.Component {
     render() {
         return (
             <div class="container">
-                <h3>Create an account to comment on posts!</h3>
+                <h3 className="header">Create an account to comment on posts!</h3>
                 <Row>
                     <Col xs={4} xsOffset={4}>
                     <form className="create-user-form" onSubmit={this.submitForm}>

@@ -6,11 +6,39 @@
 
 .comment-user-time {
     display: inline-block;
+    font-size: 14px;
+    font-family: 'Droid Serif', serif;
+    text-align: center;
+    font-style: italic;
 }
+
+.comment {
+    font-family: 'Droid Serif', serif;
+    list-style-type: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 23px;
+    margin: 0 0 23px 0;
+}
+
+.date {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: 'Droid Serif', serif;
+    text-align: center;
+    font-style: normal;
+}
+
 .time {
         font-size: 11px;
 }
 
 .length {
     cursor: pointer;
+}
+
+.submit-button {
+    font-family: Oswald;
 }

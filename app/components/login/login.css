@@ -8,7 +8,10 @@
     border: 1px solid #ccc;
     box-sizing: border-box;}
 
-
+.user-login {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
 
 #button {
     background-color: #f44283;

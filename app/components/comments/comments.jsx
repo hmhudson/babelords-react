@@ -86,9 +86,9 @@ submitForm(event) {
                        <div>
                            <div className="comment-user-time">
                                 <p className="user comment-user-time">{`${comment.user.profile.firstName} ${comment.user.profile.lastName}`}</p>
-                                <p className="time comment-user-time">{moment(comment.date).format('MMM D, YYYY h:mm A')}</p>
+                                <p className="time comment-user-time date">{moment(comment.date).format('MMM D, YYYY h:mm A')}</p>
                            </div>
-                            <p>{comment.comment}</p>
+                            <p className="comment">{comment.comment}</p>
                        </div>
                     ))}
                 </div>}

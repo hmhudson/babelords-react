@@ -8,3 +8,36 @@
 .length {
     font-weight: bold;
 }
+
+
+.blog-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    line-height: 51px;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    }
+
+.blog-post {
+    font-family: 'Droid Serif', serif;
+    font-size: 14px;
+    line-height: 23px;
+    font-style: normal;
+    }
+
+.user-date {
+    font-family: 'Droid Serif', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 23px;
+    margin: 0 0 23px 0;
+    }
+
+.blog-post-form {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    line-height: 23px;
+    font-style: normal;
+}

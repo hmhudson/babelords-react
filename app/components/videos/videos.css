@@ -8,8 +8,22 @@ body {
 
 h2 {
     text-align: center;
+    margin-left: 40px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    line-height: 51px;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 15 0 15px 0;
 }
 
 p {
-    text-align: center;;
+    font-family: 'Droid Serif', serif;
+    list-style-type: none;
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 23px;
+    margin: 0 0 23px 0;
 }

@@ -12,8 +12,7 @@ export default class Shows extends React.Component {
     render() {
         return (
             <div>
-                <h1>Upcoming Shows</h1>
-
+                <h1 className="shows">Upcoming Shows</h1>
                     <Row>
                         <Col xs={12}>
                              <Calendar/>

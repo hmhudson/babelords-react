@@ -2,7 +2,7 @@
 /**
  * Defining a User Model in mongoose
  */
- const jwt= require('jsonwebtoken');
+const jwt= require('jsonwebtoken');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 const _ = require('lodash');

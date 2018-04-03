@@ -25,6 +25,7 @@ module.exports = {
     },
 
     fetchPosts(req, res) {
+        console.log(new Date());
         // Fetch blog posts from the db
         Blog.fetchPosts()
             .then((blogPosts) => {
@@ -46,7 +47,8 @@ module.exports = {
         const blogPostId = commentObj.blogPostId;
         const newComment = {
             user: commentObj.userId,
-            comment: commentObj.newComment
+            comment: commentObj.newComment,
+            date: Date.now(),
         };
 
         Blog.createComment(blogPostId, newComment)

@@ -1,10 +1,12 @@
 import React from 'react';
+import {Row, Col, FormControl, FormGroup, ControlLabel, Button, Checkbox} from 'react-bootstrap';
 import page from 'page';
 import pagePaths from '../../config/page';
 import formExtract from '../../util/form-extract';
 import UserService from '../../services/user-service';
+import UserActions from '../../actions/user-actions';
 import './signup.css'
-import {Row, Col, FormControl, FormGroup, ControlLabel, Button, Checkbox} from 'react-bootstrap';
+
 
 
 export default class Signup extends React.Component {
@@ -24,6 +26,7 @@ export default class Signup extends React.Component {
 
         if (newUserObj.password !== newUserObj.passwordCopy){
             this.setState({passwordMismatch: true});
+            return true;
         }
         UserService.createUser(newUserObj)
             .then((res) => {
@@ -31,6 +34,7 @@ export default class Signup extends React.Component {
                     //Display error message
                     this.setState({errorMessage: res.err});
                 } else {
+                    UserActions.refreshUserStore();
                     //Redirect to homepage
                     page(pagePaths.home);
                 }

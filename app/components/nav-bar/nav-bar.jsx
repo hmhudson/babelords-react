@@ -4,6 +4,7 @@ import { Cookies } from 'react-cookie';
 import pagePaths from '../../config/page';
 import {Button, Navbar, Nav, NavItem, Row, Col} from 'react-bootstrap';
 import userStore from '../../stores/user-store';
+import UserActions from '../../actions/user-actions';
 import './nav-bar.css';
 
 const cookie = new Cookies();
@@ -53,6 +54,8 @@ export default class NavBar extends React.Component {
     logout() {
         //Destroy the cookie
         cookie.remove('token', { path: '/' });
+        // Refresh token in user store
+        UserActions.refreshUserStore();
         //Rerender NavBar
         this.setState({});
         //Redirect to homepage

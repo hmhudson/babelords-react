@@ -20,9 +20,8 @@ let userServices = {
                     return res.body;
                 }
 
-                // TODO set cookie expiration date
                 // Set the cookie
-                cookie.set('token', res.body.token, { path: '/', expires });
+                cookie.set('token', res.body.token, { path: '/', expires: new Date(new Date().getTime() + 60 * 60 * 24 * 1000) });
 
                 return res.body;
 
@@ -41,7 +40,7 @@ let userServices = {
             }
 
             // Set the cookie
-            cookie.set('token', res.body.token, { path: '/' });
+            cookie.set('token', res.body.token, { path: '/', expires: new Date(new Date().getTime() + 60 * 60 * 24 * 1000) });
 
             return res.body;
         });

@@ -6,7 +6,6 @@ const CommentSchema = new mongoose.Schema({
     date: {
         type: Date,
         required: true,
-        default: new Date()
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
@@ -51,13 +50,14 @@ BlogSchema.statics = {
         return this.find({})
             .limit(5)
             .sort({date: -1})
+            .populate('comments.user')
             .lean()
             .exec();
     },
     createComment(blogPostId, comment) {
         return this.findOneAndUpdate(
             { _id: blogPostId },
-            { $push: { comments: comment } },
+            { $push: { comments: { $each: [comment], $position: 0 } } },
             { new: true }
         )
         .lean()

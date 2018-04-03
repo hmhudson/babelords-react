@@ -4,6 +4,7 @@ import page from 'page';
 import pagePaths from '../../config/page';
 import formExtract from '../../util/form-extract';
 import UserService from '../../services/user-service';
+import UserActions from '../../actions/user-actions';
 import './login.css';
 
 
@@ -26,6 +27,8 @@ export default class Login extends React.Component {
                     //Display error message
                     this.setState({errorMessage: res.err});
                 } else {
+                    // Refresh token in user store
+                    UserActions.refreshUserStore();
                     //Redirect to homepage
                     page(pagePaths.home);
                 }

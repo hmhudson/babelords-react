@@ -5,7 +5,7 @@ import BlogStore from '../../stores/blog-store';
 import BlogActions from '../../actions/blog-actions';
 import formExtract from '../../util/form-extract';
 import {Row, Col, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
-import userStore from '../../stores/user-store';
+import UserStore from '../../stores/user-store';
 import Comments from '../comments/comments';
 import './blog.css';
 
@@ -22,6 +22,7 @@ export default class Blog extends React.Component {
 
     componentWillMount() {
         BlogStore.addChangeListener(this.updateBlogData);
+        UserStore.addChangeListener(this.updateBlogData);
     }
 
     componentDidMount() {
@@ -30,6 +31,7 @@ export default class Blog extends React.Component {
 
     componentWillUnmount() {
         BlogStore.removeChangeListener(this.updateBlogData);
+        UserStore.removeChangeListener(this.updateBlogData);
     }
 
     updateBlogData() {
@@ -47,7 +49,7 @@ export default class Blog extends React.Component {
 
         BlogService.createBlogPost(blogPost)
             .then((res) => {
-                console.log(res);
+                BlogActions.getAllBlogPosts();
             });
     }
 
@@ -80,10 +82,9 @@ export default class Blog extends React.Component {
     }
 
     render() {
-        console.log(this.state.blogPosts);
       return (
           <div>
-              {userStore.isAdmin() &&
+              {UserStore.isAdmin() &&
                   <Row>
                   <Col xs={8} xsOffset={2}>
                       <form className="blog-post-form" onSubmit={this.submitForm}>

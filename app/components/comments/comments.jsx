@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import BlogService from '../../services/blog-service';
@@ -16,7 +17,10 @@ export default class Comments extends React.Component {
         this.state = {
             visible: false,
             blogPost: this.props.blogPost,
+            newComment: ''
         };
+
+        this.onCommentChange = this.onCommentChange.bind(this);
         this.showComments = this.showComments.bind(this);
         this.submitForm = this.submitForm.bind(this);
         this.updateBlogPostData = this.updateBlogPostData.bind(this);
@@ -30,6 +34,10 @@ export default class Comments extends React.Component {
         this.setState({ blogPost: blogPost });
     }
 
+    onCommentChange(event) {
+        this.setState({newComment: event.target.value});
+    }
+
 showComments(event) {
     event.preventDefault();
     if (this.state.visible === false) {
@@ -41,14 +49,15 @@ showComments(event) {
 
 submitForm(event) {
     event.preventDefault();
-    const commentObj = formExtract(event);
-
-    commentObj.blogPostId = this.state.blogPost._id;
-    commentObj.userId = currentUser.id;
+    const commentObj = {
+        newComment: this.state.newComment,
+        blogPostId: this.state.blogPost._id,
+        userId: currentUser.id,
+    }
 
     BlogService.createComment(commentObj)
         .then((res) => {
-            console.log(res);
+            this.setState({newComment: ''});
             BlogActions.getAllBlogPosts();
         });
 }
@@ -61,7 +70,7 @@ submitForm(event) {
                     <Col xs={4} xsOffset={4}>
                     <FormGroup controlId="formControlComment">
                         <ControlLabel>Comment</ControlLabel>
-                        <FormControl componentClass="textarea" name="newComment" placeholder="Leave us a comment!" required/>
+                        <FormControl componentClass="textarea" name="newComment" value={this.state.newComment} onChange={this.onCommentChange} placeholder="Leave us a comment!" required/>
                     </FormGroup>
                     </Col>
                 </Row>
@@ -76,7 +85,7 @@ submitForm(event) {
                     {(this.state.blogPost.comments || []).map(comment => (
                        <div>
                            <div className="comment-user-time">
-                                <p className="user comment-user-time">{comment.user}</p>
+                                <p className="user comment-user-time">{`${comment.user.profile.firstName} ${comment.user.profile.lastName}`}</p>
                                 <p className="time comment-user-time">{moment(comment.date).format('MMM D, YYYY h:mm A')}</p>
                            </div>
                             <p>{comment.comment}</p>

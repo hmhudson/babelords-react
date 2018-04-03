@@ -25,7 +25,7 @@ class UserStore extends EventEmitter {
   /**
    *    SETUPS
    */
-  setupUserStore(listings) {
+  setupUserStore() {
       this.userData = {
           token: cookie.get('token')
       };
@@ -72,7 +72,7 @@ const store = new UserStore();
 Dispatcher.register((action) => {
   let actionType = action.actionType;
   if (actionType === 'USER_UPDATED') {
-    store.setupUserStore(action.data);
+    store.setupUserStore();
   }
 });
 export default store;

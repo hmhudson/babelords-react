@@ -66,7 +66,7 @@ export default class NavBar extends React.Component {
         return (
             <div>
                 <Row>
-                    <Col xs={12}>
+                    <Col xs={12} className="picture-col">
                         <div className="pictureExtend">
                             <img src="http://i.imgur.com/PLFPWPx.jpg" alt="Babe Lords logo" id="babeLogo" onClick={() => this.pageToHome()}/>
                         </div>
@@ -78,60 +78,53 @@ export default class NavBar extends React.Component {
                     </Navbar.Header>
                     <Navbar.Collapse>
                     <Nav>
-                        <Row>
-                            <Col xs={2}/>
-                <Col xs={1}>
-                      <NavItem eventKey={1} onClick={() => this.pageToBabes()}>
-                        Babes
-                      </NavItem>
-                  </Col>
-                  <Col xs={1}>
-                      <NavItem eventKey={2} onClick={() => this.pageToMerch()}>
-                        Merch
-                      </NavItem>
-                </Col>
-                <Col xs={1}>
-                      <NavItem eventKey={3} onClick={() => this.pageToShows()}>
-                          Shows
-                      </NavItem>
-                </Col>
-                <Col xs={1}>
-                      <NavItem eventKey={4} onClick={() => this.pageToGallery()}>
-                          Gallery
-                      </NavItem>
-                </Col>
-                <Col xs={1}>
-                      <NavItem eventKey={5} onClick={() => this.pageToMusic()}>
-                          Music
-                      </NavItem>
-                </Col>
-                <Col xs={1}>
-                      <NavItem eventKey={6} onClick={() => this.pageToVideos()}>
-                          Videos
-                      </NavItem>
-                </Col>
-                <Col xs={1}>
-                      <NavItem eventKey={7} onClick={() => this.pageToContact()}>
-                          Contact
-                      </NavItem>
-                </Col>
-                {!userStore.isLoggedIn() && <Col xs={1}>
-                      <NavItem eventKey={8} onClick={() => this.pageToLogin()}>
-                          Login
-                      </NavItem>
-                </Col>}
-                {!userStore.isLoggedIn() && <Col xs={1}>
-                      <NavItem eventKey={8} onClick={() => this.pageToSignup()}>
-                          Sign Up
-                      </NavItem>
-                </Col>}
-                {userStore.isLoggedIn() && <Col xs={1}>
-                      <NavItem eventKey={8} onClick={() => this.logout()}>
-                          Log Out
-                      </NavItem>
-                </Col>}
-                <Col xs={2}/>
-                  </Row>
+                    <div className="nav-item-container">
+                        <NavItem eventKey={1} onClick={() => this.pageToBabes()}>
+                          Babes
+                        </NavItem>
+
+                        <NavItem eventKey={2} onClick={() => this.pageToMerch()}>
+                          Merch
+                        </NavItem>
+
+                        <NavItem eventKey={3} onClick={() => this.pageToShows()}>
+                            Shows
+                        </NavItem>
+
+                        <NavItem eventKey={4} onClick={() => this.pageToGallery()}>
+                            Gallery
+                        </NavItem>
+
+                        <NavItem eventKey={5} onClick={() => this.pageToMusic()}>
+                            Music
+                        </NavItem>
+
+                        <NavItem eventKey={6} onClick={() => this.pageToVideos()}>
+                            Videos
+                        </NavItem>
+
+                        <NavItem eventKey={7} onClick={() => this.pageToContact()}>
+                            Contact
+                        </NavItem>
+
+                      {!userStore.isLoggedIn() &&
+                            <NavItem eventKey={8} onClick={() => this.pageToLogin()}>
+                                Login
+                            </NavItem>
+                      }
+                      {!userStore.isLoggedIn() &&
+                            <NavItem eventKey={8} onClick={() => this.pageToSignup()}>
+                                Sign Up
+                            </NavItem>
+                      }
+                      {userStore.isLoggedIn() &&
+                            <NavItem eventKey={8} onClick={() => this.logout()}>
+                                Log Out
+                            </NavItem>
+                      }
+                    </div>
+
+
                     </Nav>
                     </Navbar.Collapse>
                 </Navbar>

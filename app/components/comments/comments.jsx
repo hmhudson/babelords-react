@@ -9,15 +9,14 @@ import formExtract from '../../util/form-extract';
 import {Row, Col, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
 import './comments.css';
 
-const currentUser = userStore.getUser();
-
 export default class Comments extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             visible: false,
             blogPost: this.props.blogPost,
-            newComment: ''
+            newComment: '',
+            currentUser: userStore.getUser() || {},
         };
 
         this.onCommentChange = this.onCommentChange.bind(this);
@@ -31,7 +30,7 @@ export default class Comments extends React.Component {
     }
 
     updateBlogPostData(blogPost) {
-        this.setState({ blogPost: blogPost });
+        this.setState({ blogPost: blogPost, currentUser: userStore.getUser() || {} });
     }
 
     onCommentChange(event) {
@@ -52,7 +51,7 @@ submitForm(event) {
     const commentObj = {
         newComment: this.state.newComment,
         blogPostId: this.state.blogPost._id,
-        userId: currentUser.id,
+        userId: this.state.currentUser.id,
     }
 
     BlogService.createComment(commentObj)

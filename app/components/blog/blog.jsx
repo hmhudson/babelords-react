@@ -14,10 +14,17 @@ export default class Blog extends React.Component {
         super(props);
         this.state = {
             blogPosts: [],
+            title: '',
+            user:'',
+            post: '',
             loading: true
         };
 
         this.updateBlogData = this.updateBlogData.bind(this);
+        this.onTitleChange = this.onTitleChange.bind(this);
+        this.onUserChange = this.onUserChange.bind(this);
+        this.onPostChange = this.onPostChange.bind(this);
+        this.submitForm = this.submitForm.bind(this);
     }
 
     componentWillMount() {
@@ -45,12 +52,33 @@ export default class Blog extends React.Component {
 
     submitForm(event) {
         event.preventDefault();
-        const blogPost = formExtract(event);
+        const blogPost = {
+            title: this.state.title,
+            user: this.state.user,
+            post: this.state.post
+        };
 
         BlogService.createBlogPost(blogPost)
             .then((res) => {
+                this.setState({
+                    title: '',
+                    user:'',
+                    post:''
+                });
                 BlogActions.getAllBlogPosts();
             });
+    }
+
+    onTitleChange(event) {
+        this.setState({title: event.target.value});
+    }
+
+    onUserChange(event) {
+        this.setState({user: event.target.value});
+    }
+
+    onPostChange(event) {
+        this.setState({post: event.target.value});
     }
 
     renderBlogPost(blogPost) {
@@ -91,15 +119,15 @@ export default class Blog extends React.Component {
                       <form className="blog-post-form" onSubmit={this.submitForm}>
                           <FormGroup controlId="formControlTitle">
                               <ControlLabel>Title*</ControlLabel>
-                              <FormControl type="text" name="title" placeholder="Title" required/>
+                              <FormControl type="text" name="title" placeholder="Title" value={this.state.title} onChange={this.onTitleChange} required/>
                           </FormGroup>
                           <FormGroup controlId="formControlAuthor">
                               <ControlLabel>Author*</ControlLabel>
-                              <FormControl type="text" name="user" placeholder="Author" required/>
+                              <FormControl type="text" name="user" placeholder="Author" value={this.state.user} onChange={this.onUserChange} required/>
                           </FormGroup>
                           <FormGroup controlId="formControlPost">
                               <ControlLabel>Post*</ControlLabel>
-                              <FormControl componentClass="textarea" name="post" placeholder="Post" required/>
+                              <FormControl componentClass="textarea" name="post" placeholder="Post" value={this.state.post} onChange={this.onPostChange} required/>
                           </FormGroup>
                           <FormGroup>
                               <Button className="submit-button" type="submit" value="Post">Post</Button>

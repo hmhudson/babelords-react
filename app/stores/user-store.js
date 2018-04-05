@@ -29,6 +29,7 @@ class UserStore extends EventEmitter {
       this.userData = {
           token: cookie.get('token')
       };
+     console.log(this.userData, 'USER STORE');
     this.emit('USER_UPDATED');
   }
   /**

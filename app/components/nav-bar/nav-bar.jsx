@@ -65,11 +65,18 @@ export default class NavBar extends React.Component {
     render() {
         return (
             <div>
-                <div className="pictureExtend">
-                    <img src="http://i.imgur.com/PLFPWPx.jpg" alt="Babe Lords logo" id="babeLogo" onClick={() => this.pageToHome()}/>
-                </div>
+                <Row>
+                    <Col xs={12}>
+                        <div className="pictureExtend">
+                            <img src="http://i.imgur.com/PLFPWPx.jpg" alt="Babe Lords logo" id="babeLogo" onClick={() => this.pageToHome()}/>
+                        </div>
+                    </Col>
+                </Row>
                 <Navbar style={style} inverse collapseOnSelect>
-                  <Navbar.Collapse>
+                    <Navbar.Header>
+                        <Navbar.Toggle />
+                    </Navbar.Header>
+                    <Navbar.Collapse>
                     <Nav>
                         <Row>
                             <Col xs={2}/>
@@ -126,7 +133,7 @@ export default class NavBar extends React.Component {
                 <Col xs={2}/>
                   </Row>
                     </Nav>
-                  </Navbar.Collapse>
+                    </Navbar.Collapse>
                 </Navbar>
             </div>
         );

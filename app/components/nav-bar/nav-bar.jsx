@@ -65,7 +65,7 @@ export default class NavBar extends React.Component {
     render() {
         return (
             <div>
-                <Row>
+                <Row className="logo-row">
                     <Col xs={12} className="picture-col">
                         <div className="pictureExtend">
                             <img src="http://i.imgur.com/PLFPWPx.jpg" alt="Babe Lords logo" id="babeLogo" onClick={() => this.pageToHome()}/>

@@ -47,6 +47,10 @@
     padding: 0;
 }
 
+.logo-row {
+    margin: 0;
+}
+
 .nav {
     width: 100%;
 }

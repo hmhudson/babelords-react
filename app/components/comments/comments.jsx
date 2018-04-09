@@ -1,10 +1,12 @@
 import React from 'react';
+import _ from 'lodash';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import { Row, Col, FormControl, FormGroup, ControlLabel, Button } from 'react-bootstrap';
 import BlogService from '../../services/blog-service';
 import BlogActions from '../../actions/blog-actions';
 import userStore from '../../stores/user-store';
+import formExtract from '../../util/form-extract';
 import './comments.css';
 
 export default class Comments extends React.Component {
@@ -31,11 +33,11 @@ export default class Comments extends React.Component {
     this.setState({ newComment: event.target.value });
   }
 
-  dateBlogPostData(blogPost) {
+  updateBlogPostData(blogPost) {
     this.setState({ blogPost: blogPost, currentUser: userStore.getUser() || {} });
   }
 
-  mments(event) {
+  showComments(event) {
     event.preventDefault();
     if (this.state.visible === false) {
       this.setState({ visible: true });
@@ -48,7 +50,7 @@ export default class Comments extends React.Component {
     event.preventDefault();
     const commentObj = {
       newComment: this.state.newComment,
-      blogPostId: this.state.blogPost.id,
+      blogPostId: this.state.blogPost._id,
       userId: this.state.currentUser.id,
     };
 
@@ -62,7 +64,8 @@ export default class Comments extends React.Component {
   render() {
     return (
       <div className="comment-container">
-        {userStore.isLoggedIn() && <form className="blog-post-form" onSubmit={this.submitForm}>
+        {userStore.isLoggedIn() &&
+        <form className="blog-post-form" onSubmit={this.submitForm}>
           <Row>
             <Col xs={4} xsOffset={4}>
               <FormGroup controlId="formControlComment">
@@ -78,7 +81,8 @@ export default class Comments extends React.Component {
           </Row>
         </form>}
         <a onClick={this.showComments}><p className="length">{this.state.blogPost.comments.length} Comments</p></a>
-        {this.state.visible && <div>
+        {this.state.visible &&
+        <div>
           {(this.state.blogPost.comments || []).map(comment => (
             <div>
               <div className="comment-user-time">
@@ -88,13 +92,14 @@ export default class Comments extends React.Component {
               <p className="comment">{comment.comment}</p>
             </div>
           ))}
-
+        </div>}
       </div>
+    );
   }
 }
 
 
-//Prop comments should be an array
+// Prop comments should be an array
 Comments.propTypes = {
-    blogPost: PropTypes.object
-}
+  blogPost: PropTypes.object
+};

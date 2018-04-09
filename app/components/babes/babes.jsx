@@ -14,16 +14,15 @@ export default class Babes extends React.Component {
         <h1 className="about">About Us</h1>
         <div>
           <Col lg={12}>
+            <h3 className="byline">If Ke$ha was a Ramone...</h3>
             <p className="band-bio">
                 Before there was "Babe Lords" there was "The Hannas,"--an ill-fated high school rock and
                 roll band that burned out seemingly as quickly as it had screeched its way onto the scene. To the dismay of the band's fans,
                 the glamour and romance of a youthful pursuit of punk rock freedom soon darkened in the face of ACT tests, curfews,
                 parental chauffeurs, and an incredible lack of sexual opportunity. It was during this time, however, that those in
                 the band made a choice that would send them headlong towards their destiny, putting their young lives in the hands of
-                fate- they chose their instruments. Haley Hudson on guitar, and Mandy Davis on bass. Out of the fire that was the Hannas,
-                came a more firey fire that is Babe Lords. In the past, bassist Mandy Davis has referenced influences such as the Replacements,
-                Sleater-Kinney, Ke$ha, and the overwhelming, life-affirming, bellyscream feeling that fuels all feminists to scream when no
-                one is listening.
+                fate- they chose their instruments. Haley on guitar, and Mandy on bass. Out of the fire that was the Hannas,
+                came a more burning passion that is Babe Lords.
             </p>
           </Col>
         </div>

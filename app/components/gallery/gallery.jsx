@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import Lightbox from 'react-image-lightbox';
-import {Row, Col, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import _ from 'lodash';
 import './gallery.css';
 
@@ -29,14 +29,14 @@ export default class Gallery extends Component {
     this.openLightbox = this.openLightbox.bind(this);
   }
 
-openLightbox(event) {
+  openLightbox(event) {
     event.preventDefault();
-    var index = images.indexOf(event.target.src);
+    const index = images.indexOf(event.target.src);
     this.setState({
-        photoIndex: index,
-        isOpen: true
+      photoIndex: index,
+      isOpen: true,
     });
-}
+  }
 
   render() {
     const { photoIndex, isOpen } = this.state;
@@ -44,15 +44,15 @@ openLightbox(event) {
     return (
       <div className="photo-gallery-component">
         <div>
-            <Row>
-                {images.map((url, i) => (
-                 <div className="imageContainer">
-                    <a href="#" onClick={this.openLightbox}>
-                        <img className="images" key={i} src={url}/>
-                    </a>
-                </div>
-                ))}
-            </Row>
+          <Row>
+            {images.map((url, i) => (
+              <div className="imageContainer">
+                <a href="#" onClick={this.openLightbox}>
+                  <img className="images" key={i} src={url} alt="Babe Lords" />
+                </a>
+              </div>
+            ))}
+          </Row>
         </div>
 
         {isOpen && (

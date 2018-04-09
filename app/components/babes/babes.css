@@ -20,6 +20,12 @@
      text-align: center;
 }
 
+.byline {
+    font-size: 20px;
+    font-family: 'Droid Serif', serif;
+    font-style: italic;
+}
+
 .image-circle {
     border-radius: 50%;
     height: 400px;

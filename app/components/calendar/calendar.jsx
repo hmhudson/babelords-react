@@ -15,17 +15,17 @@ const testEvents = [{
   title: 'Babe Lords ft. Beyonce',
   start: moment('4/18/18'),
   end: moment('4/18/18'),
-  fb_URL: 'https://www.facebook.com/events/1208541792609819/',
+  fb_URL: 'https://www.facebook.com/events/210400376399159/',
 }, {
   title: 'Babe Lords Album Release show',
   start: moment('5/05/18'),
   end: moment('5/05/18'),
-  fb_URL: 'https://www.facebook.com/events/1208541792609819/',
+  fb_URL: 'https://www.facebook.com/events/210400376399159/',
 }, {
   title: 'Babe Lords with Skating Polly',
   start: moment('6/03/18'),
   end: moment('6/03/18'),
-  fb_URL: 'https://www.facebook.com/events/1208541792609819/',
+  fb_URL: 'https://www.facebook.com/events/210400376399159/',
 },
 ];
 

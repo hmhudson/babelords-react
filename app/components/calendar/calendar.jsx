@@ -13,8 +13,8 @@ const propFormats = {
 
 const testEvents = [{
   title: 'Babe Lords ft. Beyonce',
-  start: moment('3/28/18'),
-  end: moment('3/28/18'),
+  start: moment('4/18/18'),
+  end: moment('4/18/18'),
   fb_URL: 'https://www.facebook.com/events/1208541792609819/',
 }, {
   title: 'Babe Lords Album Release show',
@@ -38,7 +38,7 @@ export default class Calendar extends React.Component {
 
   Event({ event }) {
     return (
-      <a href={event.fb_URL}><span>{event.title}</span></a>
+      <a href={event.fb_URL} target="_blank"><span>{event.title}</span></a>
     );
   }
 

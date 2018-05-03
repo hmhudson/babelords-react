@@ -1,0 +1,39 @@
+.submit{
+    color:black;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    line-height: 51px;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+}
+
+.question {
+    color:black;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    line-height: 51px;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+}
+
+.answer {
+      margin-top: 20px;
+      font-size: 19px;
+      font-family: 'Droid Serif', serif;
+      line-height: 23px;
+      text-align: center;
+      font-style: normal;
+}
+
+.profile {
+    border-radius: 50%;
+    height: 80px;
+}

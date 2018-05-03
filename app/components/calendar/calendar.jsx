@@ -12,7 +12,7 @@ const propFormats = {
 };
 
 const testEvents = [{
-  title: 'Babe Lords ft. Beyonce',
+  title: 'Babe Lords ft. Beyoncé',
   start: moment('4/18/18'),
   end: moment('4/18/18'),
   fb_URL: 'https://www.facebook.com/events/210400376399159/',

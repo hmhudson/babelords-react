@@ -39,7 +39,7 @@ export default class Babes extends React.Component {
               <li><strong>Favorite Halloween Movie:</strong> The Evil Dead</li>
               <li><strong>Favorite song to play:</strong> Epicenter</li>
               <li><strong>Favorite pizza topping:</strong> Pepperoni</li>
-              <li><strong>Favorite Beyonce song:</strong> ¯\_(ツ)_/¯</li>
+              <li><strong>Favorite Beyoncé song:</strong> ¯\_(ツ)_/¯</li>
             </ul>
             <div>
               <p className="bio">
@@ -69,7 +69,7 @@ export default class Babes extends React.Component {
               <li><strong>Favorite Halloween Movie:</strong> Hocus Pocus</li>
               <li><strong>Favorite song to play:</strong> Skirt</li>
               <li><strong>Favorite pizza topping:</strong> Green Pepper</li>
-              <li><strong>Favorite Beyonce song:</strong> Halo</li>
+              <li><strong>Favorite Beyoncé song:</strong> Halo</li>
             </ul>
             <p className="bio">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -98,7 +98,7 @@ export default class Babes extends React.Component {
               <li><strong>Favorite Halloween Movie:</strong> Halloweentown</li>
               <li><strong>Favorite song to play:</strong> Spit/Housewife</li>
               <li><strong>Favorite pizza topping:</strong> Steak</li>
-              <li><strong>Favorite Beyonce song:</strong> Sorry</li>
+              <li><strong>Favorite Beyoncé song:</strong> Sorry</li>
             </ul>
             <p className="bio">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt

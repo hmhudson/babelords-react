@@ -26,6 +26,9 @@ export default class NavBar extends React.Component {
   pageToBabes() {
     page(pagePaths.babes);
   }
+  pageToFAQ() {
+    page(pagePaths.FAQ);
+  }
   pageToShows() {
     page(pagePaths.shows);
   }
@@ -81,6 +84,10 @@ export default class NavBar extends React.Component {
               <div className="nav-item-container">
                 <NavItem eventKey={1} onClick={() => this.pageToBabes()}>
                           Babes
+                </NavItem>
+
+                <NavItem eventKey={1} onClick={() => this.pageToFAQ()}>
+                          FAQ
                 </NavItem>
 
                 <NavItem eventKey={2} onClick={() => this.pageToMerch()}>

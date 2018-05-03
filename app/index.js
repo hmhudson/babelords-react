@@ -10,6 +10,7 @@ import { CookiesProvider } from 'react-cookie';
 import Merch from './components/merch/merch';
 import Blog from './components/blog/blog';
 import NavBar from './components/nav-bar/nav-bar';
+import FAQ from './components/FAQ/FAQ';
 import Babes from './components/babes/babes';
 import Contact from './components/contact/contact';
 import Gallery from './components/gallery/gallery';
@@ -27,6 +28,7 @@ ReactDOM.render(
       <Route exact path="/" component={Blog} />
       <Route path="/merch" component={Merch} />
       <Route path="/babes" component={Babes} />
+      <Route path="/FAQ" component={FAQ} />
       <Route path ="/contact" component={Contact} />
       <Route path ="/gallery" component={Gallery} />
       <Route path ="/login" component={Login} />

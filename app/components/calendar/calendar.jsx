@@ -13,18 +13,18 @@ const propFormats = {
 
 const testEvents = [{
   title: 'Babe Lords ft. Beyoncé',
-  start: moment('5/15/18'),
-  end: moment('5/25/18'),
+  start: moment('10/15/18'),
+  end: moment('10/15/18'),
   fb_URL: 'https://www.facebook.com/events/210400376399159/',
 }, {
   title: 'Babe Lords Album Release show',
-  start: moment('5/05/18'),
-  end: moment('5/05/18'),
+  start: moment('10/05/18'),
+  end: moment('10/05/18'),
   fb_URL: 'https://www.facebook.com/events/210400376399159/',
 }, {
   title: 'Babe Lords with Skating Polly',
-  start: moment('6/03/18'),
-  end: moment('6/03/18'),
+  start: moment('10/03/18'),
+  end: moment('10/03/18'),
   fb_URL: 'https://www.facebook.com/events/210400376399159/',
 },
 ];

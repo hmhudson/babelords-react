@@ -33,21 +33,40 @@ export default class FAQ extends React.Component {
            <img src="http://imgur.com/RIvkfx0.jpg" className="image-circle profile" alt="Haley playing guitar" />
         </Col>
           <ul className="answer">Beyoncé, the Regrettes, and Bikini Kill</ul>
-
         <Row>
           <h3 className="question">How did you guys get your name?</h3>
               <Col xs={8} sm={4}>
                  <img src="http://imgur.com/RIvkfx0.jpg" className="image-circle profile" alt="Haley playing guitar" />
               </Col>
 
-                  <ul className="answer">
-                        Mandy and I used to frequent a venue, The Hairhole, in
+                  <p className="answer">
+                        Mandy and I used to frequent a venue, in
                         Columbia, MO when we went to Mizzou. One night we were there
                         and the woman on stage called the crowd "babe lords."
-                        We loved that it sounded strong and feminine at the same
-                        time, so it stuck.
-                 </ul>
-        
+                        We loved that it sounded strong and feminine, so when it came time
+                        to name our band, it stuck.
+                 </p>
+            <h3 className="question">What has been your most memorable show as a band?</h3>
+            <row>
+                <Col xs={8} sm={4}>
+                    <img src="http://imgur.com/M2i4gli.jpg" className="image-circle profile" alt="Ian drumming" />
+                </Col>
+                <Col>
+                  <ul className="answer" >Some of the most memorable shows to me have always been playing
+                  Barnfests.  My favorite being when we played during sunset to a large crowd. </ul>
+                </Col>
+                <Col xs={8} sm={4}>
+                  <img src="https://i.imgur.com/NZBaAwB.jpg" className="image-circle profile" alt="Mandy playing bass" />
+                </Col>
+                  <ul className="answer">We played this show a Plush, a venue that's no longer around,
+                  back in our earlier days. That one got pretty wild with all of our friends there.  </ul>
+                <Col xs={8} sm={4}>
+                   <img src="http://imgur.com/RIvkfx0.jpg" className="image-circle profile" alt="Haley playing guitar" />
+                </Col>
+                  <ul className="answer">The most memorable show to me was when we had our release show at Vintage
+                  Vinyl.  Since it was just for us, I loved having all of our friends and supporters there.</ul>
+            </row>
+
        </Row>
         </Row>
       </div>

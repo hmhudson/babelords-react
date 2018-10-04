@@ -34,18 +34,6 @@ export default class FAQ extends React.Component {
         </Col>
           <ul className="answer">Beyoncé, the Regrettes, and Bikini Kill</ul>
         <Row>
-          <h3 className="question">How did you guys get your name?</h3>
-              <Col xs={8} sm={4}>
-                 <img src="http://imgur.com/RIvkfx0.jpg" className="image-circle profile" alt="Haley playing guitar" />
-              </Col>
-
-                  <p className="answer">
-                        Mandy and I used to frequent a venue, in
-                        Columbia, MO when we went to Mizzou. One night we were there
-                        and the woman on stage called the crowd "babe lords."
-                        We loved that it sounded strong and feminine, so when it came time
-                        to name our band, it stuck.
-                 </p>
             <h3 className="question">What has been your most memorable show as a band?</h3>
             <row>
                 <Col xs={8} sm={4}>
